@@ -19,3 +19,4 @@ Edit vmiexec.b64 with notepad++ and replace fx / with # and insert ! or other ch
 
 Why all the fuzz ?, well you don't have to, but if one know what AV/EDR looks for, this is the first step when creating binary files.
 
+PoC vid: https://www.youtube.com/watch?v=0dEMQ_Iht98
